@@ -17,7 +17,7 @@ public struct ToolbarTextField: View {
     let commitHandler: (()->Void)?
     let validationHandler: (()->Bool)?
     let loseFocusHandler: (()->Void)?
-    @available (macCatalyst 15.0, *)
+    @available (iOS 15.0, macCatalyst 15.0, *)
     @FocusState var textIsFocused: Bool
     
     public var body: some View {
@@ -26,7 +26,7 @@ public struct ToolbarTextField: View {
             VStack(spacing: 2) {
                 Text(label)
                     .font(.system(size: 10, weight: .light))
-                if #available(macCatalyst 15.0, *) {
+                if #available(iOS 15.0, macCatalyst 15.0, *) {
                     TextField(
                         label,
                         text: $text,
@@ -64,7 +64,7 @@ public struct ToolbarTextField: View {
                 }
             }
         case .compact:
-            if #available(macCatalyst 15.0, *) {
+            if #available(iOS 15.0, macCatalyst 15.0, *) {
                 TextField(
                     label,
                     text: $text,
